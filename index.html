@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="filters">
+                <h3>Filters</h3>
+                <div>
+                    <label>Attributes:</label>
+                    <input type="checkbox" id="contestWinner" /> Contest Winner
+                    <input type="checkbox" id="featured" /> Featured
+                    <input type="checkbox" id="testKitchenApproved" /> Test Kitchen Approved
+                </div>
+                <div>
+                    <label>Meal Type:</label>
+                    <select id="mealType">
+                        <option value="all">All</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dessert">Dessert</option>
+                        <option value="Breakfast">Breakfast</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Dish Type:</label>
+                    <select id="dishType">
+                        <option value="all">All</option>
+                        <option value="Curry">Curry</option>
+                        <option value="Pizza">Pizza</option>
+                        <option value="Seafood">Seafood</option>
+                        <option value="Soup">Soup</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Smoothie">Smoothie</option>
+                    </select>
+                </div>
+                <button onclick="clearFilters()">Clear All Filters</button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="search-sort">
+                <input type="text" id="search" placeholder="Search recipes..." onkeyup="searchRecipes()" />
+                <div>
+                    <label>Sort by:</label>
+                    <select id="sortOptions" onchange="sortRecipes()">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="highestRating">Highest Rating</option>
+                        <option value="lowestRating">Lowest Rating</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="recipe-cards" id="recipeCards">
+                <!-- Recipe cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
